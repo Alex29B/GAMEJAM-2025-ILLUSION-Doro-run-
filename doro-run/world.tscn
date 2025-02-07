@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bctb25teotmwf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uonb8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_gx2bm"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_l4jga"]
+
+[node name="world" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.46679, 0.179184, 0, 0.358368, 0.93358, -0.5, 0.808504, -0.310356, 0, 0, 0)
+light_color = Color(1, 0.529412, 0.8, 1)
+shadow_enabled = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16892, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_uonb8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_gx2bm")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.962857, 0.270012, 0, -0.270012, 0.962857, 0, 1.29676, 2.52954)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_l4jga")
