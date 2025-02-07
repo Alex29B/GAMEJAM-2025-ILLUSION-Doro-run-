@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bctb25teotmwf"]
+[gd_scene load_steps=5 format=3 uid="uid://bctb25teotmwf"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_nheda"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uonb8"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_gx2bm"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_l4jga"]
+size = Vector2(50, 50)
 
 [node name="world" type="Node3D"]
 
@@ -13,16 +16,17 @@ transform = Transform3D(-0.866025, -0.46679, 0.179184, 0, 0.358368, 0.93358, -0.
 light_color = Color(1, 0.529412, 0.8, 1)
 shadow_enabled = true
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16892, 0)
+script = ExtResource("1_nheda")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 shape = SubResource("CapsuleShape3D_uonb8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("CapsuleMesh_gx2bm")
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+[node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 0.962857, 0.270012, 0, -0.270012, 0.962857, 0, 1.29676, 2.52954)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
