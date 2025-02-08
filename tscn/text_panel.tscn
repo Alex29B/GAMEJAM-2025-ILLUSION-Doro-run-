@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dhq406eip5jd5"]
+
+[node name="TextPanel" type="TextEdit"]
+offset_right = 1153.0
+offset_bottom = 648.0
+text = "[Text]"

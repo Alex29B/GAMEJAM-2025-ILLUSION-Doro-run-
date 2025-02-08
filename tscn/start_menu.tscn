@@ -1,0 +1,90 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhy2waic38yl0"]
+
+[ext_resource type="Texture2D" uid="uid://cg8epbdpc6a88" path="res://assets/doro/doro-from-nikke-v0-490ristiftzd1.webp" id="1_2s2n5"]
+[ext_resource type="Script" path="res://gd/start_menu.gd" id="1_yr2lq"]
+[ext_resource type="Texture2D" uid="uid://dciegkitdqfiy" path="res://assets/start_menu/title_menu.png" id="3_6cc3b"]
+
+[sub_resource type="SystemFont" id="SystemFont_r7f5e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o6yi4"]
+bg_color = Color(0.51783, 0, 0.529549, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yr2lq")
+metadata/_edit_group_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+color = Color(0.280544, 6.54097e-05, 0.289113, 1)
+
+[node name="Doro-from-nikke-v0-490Ristiftzd1" type="Sprite2D" parent="."]
+position = Vector2(598, 308)
+scale = Vector2(0.55625, 0.572269)
+texture = ExtResource("1_2s2n5")
+
+[node name="Side" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 104.0
+offset_bottom = 220.0
+metadata/_edit_group_ = true
+
+[node name="OuterSideRight" type="ColorRect" parent="Side"]
+layout_mode = 0
+offset_left = 953.0
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0.984314, 0.360784, 1, 1)
+
+[node name="OuterSideLeft" type="ColorRect" parent="Side"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 200.0
+offset_bottom = 647.0
+color = Color(0.984314, 0.360784, 1, 1)
+
+[node name="InnerSideRight" type="ColorRect" parent="Side"]
+layout_mode = 0
+offset_left = 952.0
+offset_top = -1.0
+offset_right = 1049.0
+offset_bottom = 647.0
+color = Color(0.517647, 0, 0.529412, 1)
+
+[node name="InnerSideLeft" type="ColorRect" parent="Side"]
+layout_mode = 0
+offset_left = 107.0
+offset_right = 201.0
+offset_bottom = 647.0
+color = Color(0.517647, 0, 0.529412, 1)
+
+[node name="TitleMenu" type="Sprite2D" parent="."]
+position = Vector2(576, 136)
+scale = Vector2(0.399049, 0.409063)
+texture = ExtResource("3_6cc3b")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 502.0
+offset_right = 802.0
+offset_bottom = 584.0
+theme_override_fonts/font = SubResource("SystemFont_r7f5e")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_o6yi4")
+text = "PRESS ENTER"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

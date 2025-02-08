@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+const JUMP = 5
+const HYPERJUMP = 100
 const SPEED = 5.0
 const SENSITIVITY = 0.005
 const SPRINT_SPEED = 10.0
@@ -20,9 +22,16 @@ func _unhandled_input(event):
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-50), deg_to_rad(50))
 
 func _physics_process(delta: float) -> void:
-	#Handle sprint
+	#Handle Gravity
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	#Handle Inputs
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
+	if Input.is_action_just_pressed("jump") && velocity.y == 0:
+		velocity.y = JUMP
+	if Input.is_action_just_pressed("menu"):
+		velocity.y = HYPERJUMP
 	if Input.is_action_pressed("sprint"):
 		speed = SPRINT_SPEED
 	else:
@@ -37,5 +46,4 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		velocity.z = move_toward(velocity.z, 0, speed)
-
 	move_and_slide()
