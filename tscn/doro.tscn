@@ -8,7 +8,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppvuo"]
 albedo_texture = ExtResource("1_7o8tv")
 
-[sub_resource type="SphereMesh" id="SphereMesh_fyyuh"]
+[sub_resource type="QuadMesh" id="QuadMesh_v06gh"]
 
 [node name="Doro" type="CharacterBody3D" groups=["enemies"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32518, 1.16892, 0)
@@ -19,7 +19,7 @@ shape = SubResource("CapsuleShape3D_oebds")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 material_override = SubResource("StandardMaterial3D_ppvuo")
-mesh = SubResource("SphereMesh_fyyuh")
+mesh = SubResource("QuadMesh_v06gh")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." groups=["enemies"]]
 path_height_offset = 0.1

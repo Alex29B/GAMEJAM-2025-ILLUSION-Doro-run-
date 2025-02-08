@@ -1,15 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://bctb25teotmwf"]
+[gd_scene load_steps=10 format=3 uid="uid://bctb25teotmwf"]
 
 [ext_resource type="Script" path="res://gd/world.gd" id="1_eq0cl"]
 [ext_resource type="PackedScene" uid="uid://deds37pw47ehe" path="res://tscn/player.tscn" id="2_w51u8"]
 [ext_resource type="PackedScene" uid="uid://d4cgtud4q0jc7" path="res://tscn/doro.tscn" id="3_861lw"]
 [ext_resource type="Script" path="res://gd/world_gen.gd" id="4_pjwon"]
+[ext_resource type="Script" path="res://gd/doroBIG.gd" id="5_ivuf7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g45p4"]
-sky_top_color = Color(0.404677, 0.254471, 0.07818, 1)
-sky_horizon_color = Color(0.783922, 0.519927, 0.215428, 1)
-sky_cover_modulate = Color(0.87739, 0.599485, 0.289687, 1)
-ground_horizon_color = Color(0.784314, 0.521569, 0.215686, 1)
+sky_top_color = Color(1, 0, 0, 1)
+sky_horizon_color = Color(0.665604, 3.60981e-08, 6.257e-07, 1)
+ground_bottom_color = Color(0.666667, 0, 0, 1)
+ground_horizon_color = Color(0.619608, 0, 0, 1)
 sun_angle_max = 92.22
 
 [sub_resource type="Sky" id="Sky_1u15k"]
@@ -18,7 +19,7 @@ sky_material = SubResource("ProceduralSkyMaterial_g45p4")
 [sub_resource type="Environment" id="Environment_n2w34"]
 background_mode = 2
 sky = SubResource("Sky_1u15k")
-fog_enabled = true
+glow_normalized = true
 fog_light_color = Color(0.546848, 0.352071, 0.122134, 1)
 fog_depth_curve = 2.14355
 volumetric_fog_density = 0.005
@@ -26,6 +27,7 @@ volumetric_fog_albedo = Color(0.477304, 0.304685, 0.100522, 1)
 volumetric_fog_detail_spread = 6.0
 volumetric_fog_sky_affect = 0.75
 adjustment_enabled = true
+adjustment_brightness = 0.5
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_o1u7f"]
 
@@ -45,3 +47,10 @@ script = ExtResource("4_pjwon")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="World_gen"]
 navigation_mesh = SubResource("NavigationMesh_o1u7f")
+
+[node name="Doro2" parent="." instance=ExtResource("3_861lw")]
+transform = Transform3D(0.810348, 0, 0.585948, 0, 1, 0, -0.585948, 0, 0.810348, -13.2891, 13.2379, -42.0695)
+
+[node name="Doro3" parent="." instance=ExtResource("3_861lw")]
+transform = Transform3D(8.26072, 0, 11.2889, 0, 13.9886, 0, -11.2889, 0, 8.26072, 2.58381, 41.9088, 62.7183)
+script = ExtResource("5_ivuf7")

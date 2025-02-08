@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-const SPEED = .11
-const JUMP = .2
+const SPEED = .08
+const JUMP = .3
 
 @onready var nav_agent = $NavigationAgent3D
 
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 			current_location.z += SPEED
 		if ((prev_location.x - current_location.x) + (prev_location.z - current_location.z)) < 1:
 			current_location.y += JUMP
-		rotate_y(0.5)
+		rotate_y(0.0005)
 	global_position = global_position.move_toward(current_location, SPEED)
 	move_and_slide()
 

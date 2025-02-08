@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://d4cgtud4q0jc7" path="res://tscn/doro.tscn" id="3_vvuw0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_g45p4"]
-sky_top_color = Color(0.404677, 0.254471, 0.07818, 1)
-sky_horizon_color = Color(0.783922, 0.519927, 0.215428, 1)
-sky_cover_modulate = Color(0.87739, 0.599485, 0.289687, 1)
-ground_horizon_color = Color(0.784314, 0.521569, 0.215686, 1)
+sky_top_color = Color(1, 0, 0, 1)
+sky_horizon_color = Color(0.739789, 2.00946e-06, 5.77569e-07, 1)
+ground_bottom_color = Color(0.787542, 2.69532e-06, 2.88785e-07, 1)
+ground_horizon_color = Color(0.461862, 8.00174e-07, 1.44392e-07, 1)
 sun_angle_max = 92.22
 
 [sub_resource type="Sky" id="Sky_1u15k"]
@@ -18,7 +18,6 @@ sky_material = SubResource("ProceduralSkyMaterial_g45p4")
 [sub_resource type="Environment" id="Environment_n2w34"]
 background_mode = 2
 sky = SubResource("Sky_1u15k")
-fog_enabled = true
 fog_light_color = Color(0.546848, 0.352071, 0.122134, 1)
 fog_depth_curve = 2.14355
 volumetric_fog_density = 0.005
@@ -26,6 +25,7 @@ volumetric_fog_albedo = Color(0.477304, 0.304685, 0.100522, 1)
 volumetric_fog_detail_spread = 6.0
 volumetric_fog_sky_affect = 0.75
 adjustment_enabled = true
+adjustment_brightness = 0.41
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_o1u7f"]
 

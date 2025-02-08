@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://deds37pw47ehe"]
+[gd_scene load_steps=5 format=3 uid="uid://deds37pw47ehe"]
 
 [ext_resource type="Script" path="res://gd/player.gd" id="1_2sbuw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g8e0g"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bgfct"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ar86a"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 25.0
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16892, 0)
@@ -20,3 +24,4 @@ mesh = SubResource("CapsuleMesh_bgfct")
 
 [node name="Camera3D" type="Camera3D" parent="Head2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.610366, -0.427292)
+attributes = SubResource("CameraAttributesPractical_ar86a")

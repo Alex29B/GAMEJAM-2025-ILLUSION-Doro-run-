@@ -1,7 +1,7 @@
 extends Node
 
 const GENERATION_BOUND_DISTANCE = 64
-const VERTICAL_AMPLITUDE = 15
+const VERTICAL_AMPLITUDE = 17
 
 var noise = FastNoiseLite.new()
 #var player_position: Vector3
@@ -44,7 +44,7 @@ func _process(delta):
 	generate_new_cubes_from_position(player.position)
 	
 func create_cube(position, color):
-	var box_size = Vector3(1,1,1)
+	var box_size = Vector3(1,2,1)
 	
 	var static_body = StaticBody3D.new()
 	static_body.position = position
