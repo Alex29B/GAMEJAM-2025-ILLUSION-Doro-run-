@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bctb25teotmwf"]
+[gd_scene load_steps=10 format=3 uid="uid://bctb25teotmwf"]
 
 [ext_resource type="Script" path="res://gd/world_gen.gd" id="1_54gfh"]
 [ext_resource type="Script" path="res://gd/world.gd" id="1_rt5yu"]
@@ -29,6 +29,8 @@ adjustment_brightness = 0.41
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_o1u7f"]
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_lm23f"]
+
 [node name="my_world" type="Node"]
 script = ExtResource("1_rt5yu")
 
@@ -45,3 +47,6 @@ script = ExtResource("1_54gfh")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="World_gen"]
 navigation_mesh = SubResource("NavigationMesh_o1u7f")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_lm23f")

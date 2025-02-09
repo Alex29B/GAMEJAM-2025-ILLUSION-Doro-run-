@@ -1,7 +1,7 @@
 extends Sprite2D
 
-var texture1 : Texture = preload("res://assets/doro/doro-from-nikke-v0-490ristiftzd1.webp")
-var texture2 : Texture = preload("res://assets/doro/doro_mad.webp")
+var texture1 : Texture = preload("res://assets/doro/doro-from-nikke-v0-490ristiftzd1.png")
+var texture2 : Texture = preload("res://assets/doro/doro_mad.png")
 var is_rotate = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

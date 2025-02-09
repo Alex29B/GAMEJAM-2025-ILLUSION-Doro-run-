@@ -104,7 +104,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_y0tut")
 text = "GIVE UP"
 
 [node name="YouDoro" type="Sprite2D" parent="."]
-position = Vector2(626, 480)
+position = Vector2(586, 480)
 texture = ExtResource("2_es472")
 
 [connection signal="pressed" from="VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
