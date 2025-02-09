@@ -1,7 +1,7 @@
 res://tscn/start_menu.tscn
-res://gd/doro.gd
 res://tscn/gameover_menu.tscn
 res://tscn/world.tscn
 res://tscn/doro.tscn
 res://tscn/player.tscn
 res://tscn/BGM.tscn
+res://gd/doro.gd

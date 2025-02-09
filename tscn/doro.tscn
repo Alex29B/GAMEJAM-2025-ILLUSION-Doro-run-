@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bn17u51f8dvlq" path="res://audio/squeaky-toy-4-43608.mp3" id="3_wbems"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oebds"]
+height = 2.1
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppvuo"]
 albedo_texture = ExtResource("1_7o8tv")

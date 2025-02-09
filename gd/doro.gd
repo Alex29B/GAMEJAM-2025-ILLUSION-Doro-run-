@@ -12,6 +12,10 @@ const AGGRO = 50
 var speed = SPEED
 var jump = JUMP
 var previous_distance = 0
+var difficulty = 1
+
+func _ready() -> void:
+	difficulty = global.difficulty
 
 func update_target_location(target_location):
 	nav_agent.target_position = target_location
@@ -35,19 +39,19 @@ func _physics_process(delta: float) -> void:
 		var prev_location = current_location
 		var prev_position = nav_agent.distance_to_target()
 		if current_location.x > nav_agent.target_position.x:
-			current_location.x -= speed
+			current_location.x -= speed * difficulty
 		else:
-			current_location.x += speed
+			current_location.x += speed * difficulty
 		if current_location.z > nav_agent.target_position.z:
-			current_location.z -= speed
+			current_location.z -= speed * difficulty
 		else:
-			current_location.z += speed
-		if (global.difficulty == 1):
+			current_location.z += speed * difficulty
+		if (difficulty == 1):
 			if (abs(prev_location.x - current_location.x) + abs(prev_location.z - current_location.z)) <= 1 and nav_agent.distance_to_target() > 2:
-				current_location.y += jump
+				current_location.y += jump * difficulty
 		rotate_y(0.05)
 	global_position = global_position.move_toward(current_location, SPEED)
-	if (global.difficulty == 2):
+	if (difficulty == 2):
 		if ((previous_distance - nav_agent.distance_to_target() < 0.0001)):
 			velocity.y = 3
 	previous_distance = nav_agent.distance_to_target()
