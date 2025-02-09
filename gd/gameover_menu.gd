@@ -6,6 +6,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if $'AudioStreamPlayer'.playing == false:
+		await get_tree().create_timer(1.0).timeout
+		$'AudioStreamPlayer'.play()
 	pass
 
 func _on_retry_button_pressed() -> void:

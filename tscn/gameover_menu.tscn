@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5bx33jt1w57y"]
+[gd_scene load_steps=7 format=3 uid="uid://c5bx33jt1w57y"]
 
 [ext_resource type="Texture2D" uid="uid://cg8epbdpc6a88" path="res://assets/doro/doro-from-nikke-v0-490ristiftzd1.webp" id="1_h24a3"]
 [ext_resource type="Script" path="res://gd/gameover_menu.gd" id="1_viyss"]
 [ext_resource type="Texture2D" uid="uid://c6mif1cqymomm" path="res://assets/gameover_menu/You doro.png" id="2_es472"]
+[ext_resource type="AudioStream" uid="uid://5ook6lloke2b" path="res://audio/Bonk Sound Effect(1).ogg" id="4_32qdr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqf51"]
 bg_color = Color(0.6, 0, 0.545098, 1)
@@ -106,6 +107,9 @@ text = "GIVE UP"
 [node name="YouDoro" type="Sprite2D" parent="."]
 position = Vector2(586, 480)
 texture = ExtResource("2_es472")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_32qdr")
 
 [connection signal="pressed" from="VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

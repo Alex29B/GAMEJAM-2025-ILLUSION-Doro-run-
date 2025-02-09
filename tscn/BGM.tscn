@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://xi16tbqr721w"]
+
+[ext_resource type="AudioStream" uid="uid://ceirkli8usd87" path="res://audio/start_menu/FOR_Doro.ogg" id="1_opv7a"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_opv7a")
+autoplay = true

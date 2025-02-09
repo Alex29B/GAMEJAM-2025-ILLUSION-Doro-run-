@@ -17,6 +17,9 @@ func update_target_location(target_location):
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if $'AudioStreamPlayer3D'.playing == false:
+		$'AudioStreamPlayer3D'.play()
+	pass
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	var current_location = global_transform.origin
@@ -40,7 +43,7 @@ func _physics_process(delta: float) -> void:
 			current_location.z += speed
 		if (abs(prev_location.x - current_location.x) + abs(prev_location.z - current_location.z)) <= 1 and nav_agent.distance_to_target() > 2:
 			current_location.y += jump
-		rotate_y(0.5)
+		rotate_y(0.05)
 	global_position = global_position.move_toward(current_location, SPEED)
 	move_and_slide()
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4cgtud4q0jc7"]
+[gd_scene load_steps=7 format=3 uid="uid://d4cgtud4q0jc7"]
 
 [ext_resource type="Texture2D" uid="uid://cg8epbdpc6a88" path="res://assets/doro/doro-from-nikke-v0-490ristiftzd1.webp" id="1_7o8tv"]
 [ext_resource type="Script" path="res://gd/doro.gd" id="1_78nwh"]
+[ext_resource type="AudioStream" uid="uid://bn17u51f8dvlq" path="res://audio/squeaky-toy-4-43608.mp3" id="3_wbems"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oebds"]
 
@@ -29,5 +30,10 @@ path_max_distance = 3.01
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="DoroCollisionZone"]
 shape = SubResource("CapsuleShape3D_oebds")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_wbems")
+max_distance = 25.0
+attenuation_filter_db = -35.0
 
 [connection signal="body_entered" from="DoroCollisionZone" to="." method="_on_doro_collision_zone_body_entered"]
