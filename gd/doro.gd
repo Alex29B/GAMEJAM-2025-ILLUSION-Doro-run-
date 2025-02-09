@@ -39,16 +39,16 @@ func _physics_process(delta: float) -> void:
 		var prev_location = current_location
 		var prev_position = nav_agent.distance_to_target()
 		if current_location.x > nav_agent.target_position.x:
-			current_location.x -= speed * difficulty
+			current_location.x -= speed
 		else:
-			current_location.x += speed * difficulty
+			current_location.x += speed
 		if current_location.z > nav_agent.target_position.z:
-			current_location.z -= speed * difficulty
+			current_location.z -= speed
 		else:
-			current_location.z += speed * difficulty
+			current_location.z += speed
 		if (difficulty == 1):
 			if (abs(prev_location.x - current_location.x) + abs(prev_location.z - current_location.z)) <= 1 and nav_agent.distance_to_target() > 2:
-				current_location.y += jump * difficulty
+				current_location.y += jump
 		rotate_y(0.05)
 	global_position = global_position.move_toward(current_location, SPEED)
 	if (difficulty == 2):
