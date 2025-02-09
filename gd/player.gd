@@ -1,5 +1,6 @@
 extends CharacterBody3D
 
+const OOB = -42
 const SPEED = 5.0
 const SENSITIVITY = 0.005
 const SPRINT_SPEED = 12.0
@@ -34,6 +35,9 @@ func _unhandled_input(event):
 
 func _physics_process(delta: float) -> void:
 	#Handle sprint
+	if (position.y <= OOB):
+		default_mode()
+		get_tree().change_scene_to_file("res://tscn/gameover_menu.tscn")
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	if Input.is_action_just_pressed("ui_accept") and jump_count < max_jumps:
