@@ -11,6 +11,7 @@ const AGGRO = 50
 
 var speed = SPEED
 var jump = JUMP
+var previous_distance = 0
 
 func update_target_location(target_location):
 	nav_agent.target_position = target_location
@@ -41,10 +42,15 @@ func _physics_process(delta: float) -> void:
 			current_location.z -= speed
 		else:
 			current_location.z += speed
-		if (abs(prev_location.x - current_location.x) + abs(prev_location.z - current_location.z)) <= 1 and nav_agent.distance_to_target() > 2:
-			current_location.y += jump
+		if (global.difficulty == 1):
+			if (abs(prev_location.x - current_location.x) + abs(prev_location.z - current_location.z)) <= 1 and nav_agent.distance_to_target() > 2:
+				current_location.y += jump
 		rotate_y(0.05)
 	global_position = global_position.move_toward(current_location, SPEED)
+	if (global.difficulty == 2):
+		if ((previous_distance - nav_agent.distance_to_target() < 0.0001)):
+			velocity.y = 3
+	previous_distance = nav_agent.distance_to_target()
 	move_and_slide()
 
 func _on_doro_collision_zone_body_entered(body: Node3D) -> void:
