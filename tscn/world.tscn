@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bctb25teotmwf"]
 
 [ext_resource type="Script" path="res://gd/world_gen.gd" id="1_54gfh"]
-[ext_resource type="Script" path="res://world.gd" id="1_aya78"]
+[ext_resource type="Script" path="res://gd/world.gd" id="1_rt5yu"]
 [ext_resource type="PackedScene" uid="uid://deds37pw47ehe" path="res://tscn/player.tscn" id="1_yqu64"]
 [ext_resource type="PackedScene" uid="uid://d4cgtud4q0jc7" path="res://tscn/doro.tscn" id="3_vvuw0"]
 
@@ -30,7 +30,7 @@ adjustment_brightness = 0.41
 [sub_resource type="NavigationMesh" id="NavigationMesh_o1u7f"]
 
 [node name="my_world" type="Node"]
-script = ExtResource("1_aya78")
+script = ExtResource("1_rt5yu")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_n2w34")

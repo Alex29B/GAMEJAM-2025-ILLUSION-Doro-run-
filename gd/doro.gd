@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 			current_location.z -= SPEED
 		else:
 			current_location.z += SPEED
-		if ((prev_location.x - current_location.x) + (prev_location.z - current_location.z)) < 1:
+		if ((prev_location.x - current_location.x) + (prev_location.z - current_location.z)) <= 1 and nav_agent.distance_to_target() > 5:
 			current_location.y += JUMP
 		rotate_y(0.5)
 	global_position = global_position.move_toward(current_location, SPEED)
@@ -33,3 +33,9 @@ func is_touched(body):
 	if body.is_in_group("/Player"):
 		print("YES")
 		body.gameover()
+
+
+func _on_doro_collision_zone_body_entered(body: Node3D) -> void:
+	if body.is_in_group("players"):
+		body.default_mode()
+		get_tree().change_scene_to_file("res://tscn/gameover_menu.tscn")

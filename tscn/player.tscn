@@ -10,7 +10,7 @@
 dof_blur_far_enabled = true
 dof_blur_far_distance = 25.0
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["players"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16892, 0)
 script = ExtResource("1_2sbuw")
 
@@ -25,3 +25,8 @@ mesh = SubResource("CapsuleMesh_bgfct")
 [node name="Camera3D" type="Camera3D" parent="Head2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.610366, -0.427292)
 attributes = SubResource("CameraAttributesPractical_ar86a")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CapsuleShape3D_g8e0g")

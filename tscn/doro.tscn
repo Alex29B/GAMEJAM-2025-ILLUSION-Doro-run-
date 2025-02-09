@@ -24,3 +24,10 @@ mesh = SubResource("QuadMesh_v06gh")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." groups=["enemies"]]
 path_height_offset = 0.1
 path_max_distance = 3.01
+
+[node name="DoroCollisionZone" type="Area3D" parent="."]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DoroCollisionZone"]
+shape = SubResource("CapsuleShape3D_oebds")
+
+[connection signal="body_entered" from="DoroCollisionZone" to="." method="_on_doro_collision_zone_body_entered"]

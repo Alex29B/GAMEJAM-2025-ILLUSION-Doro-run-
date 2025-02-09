@@ -19,6 +19,9 @@ var t_bob = 0
 
 var speed = SPEED
 
+func default_mode():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	pass
