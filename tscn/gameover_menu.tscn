@@ -1,0 +1,109 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfmjp3k4cv36m"]
+
+[ext_resource type="Texture2D" uid="uid://cg8epbdpc6a88" path="res://assets/doro/doro-from-nikke-v0-490ristiftzd1.webp" id="1_h24a3"]
+[ext_resource type="Script" path="res://gd/gameover_menu.gd" id="1_viyss"]
+[ext_resource type="Texture2D" uid="uid://c6mif1cqymomm" path="res://assets/gameover_menu/You doro.png" id="2_es472"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqf51"]
+bg_color = Color(0.6, 0, 0.545098, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y0tut"]
+bg_color = Color(0.6, 0, 0.545098, 1)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+
+[node name="gameover_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_viyss")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1152.0
+offset_bottom = 645.0
+color = Color(0.313726, 0, 0.219608, 1)
+
+[node name="Doro" type="Sprite2D" parent="Background"]
+position = Vector2(592, 318)
+scale = Vector2(1.26038, 1.25625)
+skew = 0.549779
+texture = ExtResource("1_h24a3")
+
+[node name="Side" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -2.0
+offset_top = -2.0
+offset_right = 102.0
+offset_bottom = 218.0
+metadata/_edit_group_ = true
+
+[node name="OuterSideRight" type="ColorRect" parent="Side"]
+layout_mode = 0
+offset_left = 953.0
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0.984314, 0.360784, 1, 1)
+
+[node name="OuterSideLeft" type="ColorRect" parent="Side"]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 200.0
+offset_bottom = 647.0
+color = Color(0.984314, 0.360784, 1, 1)
+
+[node name="InnerSideRight" type="ColorRect" parent="Side"]
+layout_mode = 0
+offset_left = 952.0
+offset_top = -1.0
+offset_right = 1049.0
+offset_bottom = 647.0
+color = Color(0.517647, 0, 0.529412, 1)
+
+[node name="InnerSideLeft" type="ColorRect" parent="Side"]
+layout_mode = 0
+offset_left = 107.0
+offset_right = 201.0
+offset_bottom = 647.0
+color = Color(0.517647, 0, 0.529412, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 391.0
+offset_top = 122.0
+offset_right = 743.0
+offset_bottom = 400.0
+
+[node name="RetryButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxFlat_oqf51")
+text = "RETRY"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+theme_override_styles/focus = SubResource("StyleBoxFlat_y0tut")
+text = "GIVE UP"
+
+[node name="YouDoro" type="Sprite2D" parent="."]
+position = Vector2(626, 480)
+texture = ExtResource("2_es472")
+
+[connection signal="pressed" from="VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

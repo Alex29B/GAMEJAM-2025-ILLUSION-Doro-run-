@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dciegkitdqfiy"
-path="res://.godot/imported/title_menu.png-bde6fb4e8757320fe8aea8e1acd23157.ctex"
+uid="uid://c6mif1cqymomm"
+path="res://.godot/imported/You doro.png-f61878f1dba5b612535ab0e8903f0083.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/start_menu/title_menu.png"
-dest_files=["res://.godot/imported/title_menu.png-bde6fb4e8757320fe8aea8e1acd23157.ctex"]
+source_file="res://assets/gameover_menu/You doro.png"
+dest_files=["res://.godot/imported/You doro.png-f61878f1dba5b612535ab0e8903f0083.ctex"]
 
 [params]
 
