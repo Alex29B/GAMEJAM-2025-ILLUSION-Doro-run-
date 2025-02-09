@@ -5,11 +5,13 @@ const VERTICAL_AMPLITUDE = 17
 
 var rng = RandomNumberGenerator.new()
 var noise = FastNoiseLite.new()
+
 #var player_position: Vector3
 var player: Node
 var generated_cubes
 
 func _ready():
+	noise.seed = rng.randi_range(0, 1000000)
 	generated_cubes={}
 	#player_position = Vector3(0,0,0)
 	player=get_node("../Player")
@@ -24,7 +26,7 @@ func generate_new_cubes_from_position(player_position):
 
 func generate_cube_if_new(x,z):
 	if !has_cube_been_generated(x,z):
-		var generated_noise = noise.get_noise_2d(x,z)  * rng.randf_range(-5.0, 5.0)
+		var generated_noise = noise.get_noise_2d(x,z)
 		create_cube(Vector3(x,generated_noise*VERTICAL_AMPLITUDE,z), get_color_from_noise(generated_noise))
 		register_cube_generation_at_coordinate(x,z)
 
